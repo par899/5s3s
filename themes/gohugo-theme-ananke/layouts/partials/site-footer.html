@@ -1,0 +1,13 @@
+<footer class="{{ .Site.Params.background_color_class | default "bg-black" }} bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+    <div id="footer-info" style="color:#fff;color: #666;padding-bottom: 10px;text-align:center!important;font-size:15px !important; padding-left: 25%;"><span>© 2020</span>
+<a href="5s3s.ca" style="text-decoration: none;font-weight: 700;color: #666;">5s3s.ca</a>.  All rights reserved.</div>
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="{{ .Site.BaseURL }}" >
+
+
+     <!--{{ with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ now.Format "2006"}} {{ end }}-->
+  </a>
+
+    <!--<div>{{ partial "social-follow.html" . }}</div>-->
+  </div>
+</footer>

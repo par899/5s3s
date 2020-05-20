@@ -1,0 +1,104 @@
+<style>
+  @media (min-width: 320px) and (max-width: 480px) {.header_class{
+                                                                    font-size:25px;
+                                                                    text-align:left;
+                                                              }
+                                                              .des_class{
+                                                                font-size:18px;
+                                                                text-align:left;
+                                                              }   
+
+  }
+  @media (min-width: 320px) and (max-width: 480px) and (orientation: landscape)  {.header_class{
+                                                                    font-size:25px;
+                                                                    text-align:center;
+                                                              }
+                                                              .des_class{
+                                                                font-size:18px;
+                                                                text-align:center;
+                                                              }   
+
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+          .header_class{
+                        font-size:25px;
+                        text-align:center;
+                        }
+          .des_class{
+                      font-size:18px;
+                      text-align:center;
+                    } 
+  }
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .header_class h2{
+                        font-size:40px;
+                        text-align:center;
+                        }
+          .des_class h3{
+                      font-size:30px;
+                      text-align:center;
+                    } 
+  }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header_class h2{
+                        font-size:35px;
+                        text-align:center;
+                        }
+          .des_class h3{
+                      font-size:30px;
+                      text-align:center;
+                    } 
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .header_class h2{
+                        font-size:40px;
+                        text-align:center;
+                        }
+          .des_class h3{
+                      font-size:30px;
+                      text-align:center;
+                    } 
+}
+</style>{{ $featured_image := .Param "featured_image"}}
+{{ if $featured_image }}
+  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+  {{ $featured_image := (trim $featured_image "/") | absURL }}
+  <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');">
+    <div class="{{ .Site.Params.cover_dimming_class | default "bg-black-60" }}">
+
+      {{ partial "site-navigation.html" .}}
+      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
+      <!--  <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
+
+          {{ .Title | default .Site.Title }}
+        </h1>-->
+        {{ with .Params.heading }}
+          <h2 class="f2 f-subheadline-l fw2  header_class" style="color:white;">
+            {{ . }}
+          </h2>
+        {{ end }}
+        {{ with .Params.description }}
+          <h3 class="fw1 f5 f3-l white-80 measure-wide-l center mt3 des_class">
+            {{ . }}
+          </h3>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+{{ else }}
+  <header>
+    <div class="pb3-m pb6-l {{ .Site.Params.background_color_class | default "bg-black" }}">
+      {{ partial "site-navigation.html" . }}
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h2 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          {{ .Title | default .Site.Title }}
+        </h2>
+        {{ with .Params.description }}
+          <h3 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+            {{ . }}
+          </h3>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+{{ end }}

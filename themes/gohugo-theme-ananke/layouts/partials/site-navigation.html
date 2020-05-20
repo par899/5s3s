@@ -1,0 +1,150 @@
+
+{{ $logo_image := .Param "logo_image"}}
+{{ if $logo_image }}
+  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+  {{ $logo := (trim $logo_image "/") | absURL }}
+
+<style>
+      * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            font-family: "Prime regular",Arial,sans-serif!important;
+        }
+
+        .navbar {
+            font-size: 18px;        
+            padding-bottom: 10px;
+            top: 0;
+            width: 100%;
+             overflow: hidden;
+             background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+              background: rgba(204, 204, 204, 0.5);
+              transition: all 0.4s ease-in-out;
+        }
+
+        .main-nav {
+            list-style-type: none;
+            display: none;
+            text-decoration: none;
+        }
+
+        .nav-links,
+        .logo {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .main-nav li {
+            text-align: center;
+            margin: 15px auto;
+            text-decoration: none;
+        }
+
+        .logo {
+            display: inline-block;
+            font-size: 22px;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .navbar-toggle {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 24px;
+        }
+        .active{
+
+          display:block;
+          top: 0
+        }
+       
+
+        @media screen and (min-width: 768px) {
+            .navbar {
+                display: block;
+                justify-content: space-between;
+                padding-bottom: 0;
+                height: 70px;
+                align-items: right;
+            }
+            
+            
+            .main-nav {
+                display: inline-flex;
+                top:10px;
+                margin-right: 0px;
+                flex-direction: row;
+                justify-content: flex-end;
+                margin-right: 20%;
+            }
+
+            .main-nav li {
+                margin: 0;
+            }
+
+            .nav-links {
+                margin-left: 40px;
+                color: #000000;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .logo {
+                margin-top: 0;
+                margin-left: 5%;
+            }
+           
+
+            .navbar-toggle {
+                display: none;
+            }
+
+            .logo:hover,
+            .nav-links:hover {
+                color: rgba(255, 255, 255, 1);
+                text-decoration: none;
+            }
+        }     
+ 
+ 
+    .burger
+    {
+      color:black;
+    } 
+  
+</style>    
+          <nav class="navbar navbar-fixed-top " id="myTopnav">
+            <a href="{{ .Site.BaseURL }}" class="logo f3 fw2 hover-white no-underline white-90 dib">
+              <img src="{{$logo_image }}" alt="Smiley face" width="60px" height="60px" class="logoimg">
+            </a>
+           <span class="navbar-toggle" id="js-navbar-toggle" onclick="myFunction()">
+            <i class="fa fa-bars burger"></i></span>      
+              {{ partial "i18nlist.html" . }}
+              {{ if .Site.Menus.main }}
+              <ul class="main-nav" id="js-menu">
+                {{ range .Site.Menus.main }}
+                <li >
+                  <a class="nav-links" href="{{ .URL }}" title="{{ .Name }} page">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+              </ul>      
+        <script type="text/javascript">
+          let mainNav = document.getElementById('js-menu');
+          let navBarToggle = document.getElementById('js-navbar-toggle');
+          navBarToggle.addEventListener('click', function () {
+            mainNav.classList.toggle('active');
+  });
+
+        </script>
+    {{end}}    
+</nav>
+
+{{end}}

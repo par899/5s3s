@@ -1,0 +1,39 @@
+title = "5s3s"
+baseURL = "/"
+languageCode = "en-us"
+theme = "gohugo-theme-ananke"
+
+
+MetaDataFormat = "yaml"
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = ""
+enableRobotsTXT = true
+uglyURLs =true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"  
+
+     
+[params]
+  favicon = "https://secureservercdn.net/198.71.233.64/01f.9a2.myftpupload.com/wp-content/uploads/2019/02/Favicon-Color-153x153.jpg?time=1587496168"
+  description = "The last theme you'll ever need. Maybe."
+  facebook = ""
+  twitter = "https://twitter.com/GoHugoIO"
+  instagram = ""
+  youtube = ""
+  github = ""
+  gitlab = ""
+  linkedin = ""
+  mastodon = ""
+  slack = ""
+  stackoverflow = ""
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-black"
+  featured_image = "/images/left-right.jpg"
+  logo_image=  "/images/logo.png"
+  
+ 

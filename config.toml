@@ -17,7 +17,18 @@ uglyURLs =true
   priority = 0.5
   filename = "sitemap.xml"  
 
-     
+canonifyURLs = true
+ 
+ [menu]
+    [[menu.nav]]
+    name = "Who We Are"
+    URL = "/AboutUs/"
+    weight = 1    
+
+    [[menu.nav]]
+    name = "Services"
+    URL = "/Services"
+    weight = 2  
 [params]
   favicon = "https://secureservercdn.net/198.71.233.64/01f.9a2.myftpupload.com/wp-content/uploads/2019/02/Favicon-Color-153x153.jpg?time=1587496168"
   description = "The last theme you'll ever need. Maybe."

@@ -1,4 +1,12 @@
 <style>
+  .header_class
+  {
+    font-family: 'Share Tech',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 70px;
+    line-height: 1.2em;
+    text-align: center;
+    word-wrap: break-word!important;
+  }
   @media (min-width: 320px) and (max-width: 480px) {.header_class{
                                                                     font-size:25px;
                                                                     text-align:left;
@@ -73,7 +81,7 @@
           {{ .Title | default .Site.Title }}
         </h1>-->
         {{ with .Params.heading }}
-          <h2 class="f2 f-subheadline-l fw2  header_class" style="color:white;">
+          <h2 class="header_class" style="color:white;">
             {{ . }}
           </h2>
         {{ end }}

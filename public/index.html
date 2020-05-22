@@ -34,21 +34,29 @@
       
     
     
-    <meta property="og:title" content="5s3s" />
-<meta property="og:description" content="The last theme you&#39;ll ever need. Maybe." />
+    <meta property="og:title" content="" />
+<meta property="og:description" content="5Steps 3Sucesses" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-04-24T13:58:40-04:00" />
-<meta itemprop="name" content="5s3s">
-<meta itemprop="description" content="The last theme you&#39;ll ever need. Maybe."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="5s3s"/>
-<meta name="twitter:description" content="The last theme you&#39;ll ever need. Maybe."/>
+<meta property="og:updated_time" content="2020-05-21T12:02:37-04:00" />
+<meta itemprop="name" content="">
+<meta itemprop="description" content="5Steps 3Sucesses"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="5Steps 3Sucesses"/>
 
   </head>
 
   <body class="ma0 avenir bg-near-white">
 
     <style>
+  .header_class
+  {
+    font-family: 'Share Tech',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 70px;
+    line-height: 1.2em;
+    text-align: center;
+    word-wrap: break-word!important;
+  }
   @media (min-width: 320px) and (max-width: 480px) {.header_class{
                                                                     font-size:25px;
                                                                     text-align:left;
@@ -288,6 +296,14 @@
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
       
         
+          <h2 class="header_class" style="color:white;">
+            Let&#39;s Start Draw Your Vision
+          </h2>
+        
+        
+          <h3 class="fw1 f5 f3-l white-80 measure-wide-l center mt3 des_class">
+            5Steps 3Sucesses
+          </h3>
         
       </div>
     </div>
@@ -306,6 +322,53 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
+<script type="text/javascript">
+$(function() {
+
+    $("input,textarea").not("[type=search]").jqBootstrapValidation({
+        preventSubmit: true,
+        submitError: function($form, event, errors) {
+            
+        },
+        submitSuccess: function($form, e) {
+    	    e.preventDefault();
+    	
+    	    var submitButton = $('input[type=submit]', $form);
+    	    $.ajax({
+    	      type: 'POST',
+    	      url: $form.prop('action'),
+    	      accept: {
+    	        javascript: 'application/javascript'
+    	      },
+    	      data: $form.serialize(),
+    	      beforeSend: function() {
+				submitButton.prop('value', 'Please Wait...');
+				submitButton.prop('disabled', 'disabled');
+    	      }
+    	    }).done(function(data) {
+				submitButton.prop('value', 'Thank you, we\x27ll get back to you shortly.');
+    			submitButton.prop('disabled', false);
+    			hj('formSubmitSuccessful');
+    	    });
+        },
+
+        filter: function() {
+            return $(this).is(":visible");
+        },
+    });
+
+});
+
+ 
+$('#name').focus(function() {
+    $('#success').html('');
+});
+
+</script> 
+<script>function myFunction() {
+  document.getElementById("contactForm").reset();
+}</script>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -320,42 +383,256 @@
   * {
     box-sizing: border-box;
   }
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
+   
+  @media (min-width: 320px) and (max-width: 640px) {
+    .about_us_col2 img {
+    margin-top: 0px;
+    margin-left: 0px;
+    height: auto;
+    width: auto;
+    }
+    .contact_us_column {
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+    .about_us_main_row {
+    margin-left: 0%!important; 
+     margin-right: 0%!important; 
+    padding-left: 4%!important;
+    padding-right: 2%;
+}
+.contact_main_title {
+    font-weight: 500;
+    padding-bottom: 16px;
+    position: relative;
+    font-family: 'Share Tech',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 33px!important;
+    margin-top: 8%;
+    color: #000000!important;
+    line-height: 1.2em;
+     
+}
+.abus-col2-con-p p{
+    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 13px!important;
+    line-height: 1.8em;
+    word-wrap: break-word;
+    padding: 4%; 
+    
   }
   
-  @media only screen and (min-width: 600px) {
+  .my2_pb_column_3, .my2_pb_column_4, .my2_pb_column_5, .my2_pb_column_6, .my2_pb_column_7, .my2_pb_column_8
+  {
+    padding:2%;
+  } 
+  .button_div {
+    height: 54px;
+    display: inline-block;
+    padding-left: 7%;
+}
+  .my2_pb_text_inner p {
+    font-size: 50px!important;
+    text-align: center!important;
      
-    .col-s-1 {width: 8.33%;}
-    .col-s-2 {width: 16.66%;}
-    .col-s-3 {width: 25%;}
-    .col-s-4 {width: 33.33%;}
-    .col-s-5 {width: 41.66%;}
-    .col-s-6 {width: 50%;}
-    .col-s-7 {width: 58.33%;}
-    .col-s-8 {width: 66.66%;}
-    .col-s-9 {width: 75%;}
-    .col-s-10 {width: 83.33%;}
-    .col-s-11 {width: 91.66%;}
-    .col-s-12 {width: 100%;}
+}
+  .abus_content {
+          
+    font-size: 60px!important;
+    padding: 2% 0% 0% 4%!important;;
+           }
+    .abus_content h2 {
+      font-size:35px!important;
+      margin-left:0%!important;
+    }
   }
-  @media only screen and (min-width: 768px) {
+  
+@media (min-width: 411px) and (max-width: 731px) 
+{
+  .about_us_col2 img {
+    margin-top: 0px;
+    margin-left: 0px;
+    height: auto;
+    width: auto;
+    }
+    .contact_us_column {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+  .about_us_main_row {
+    margin-left: 0%!important; 
+     margin-right: 0%!important; 
+    padding-left: 4%!important;
+    padding-right: 2%;
+}
+.abus-col2-con-p {
+    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 13px;
+    line-height: 1.8em;
+    word-wrap: break-word;   
+  }
+  .abus-col2-con-p p{
+    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 13px!important;
+    line-height: 1.8em;
+    word-wrap: break-word;
+    padding: 4%; 
+    
+  }
+  
+  .my2_pb_column_3, .my2_pb_column_4, .my2_pb_column_5, .my2_pb_column_6, .my2_pb_column_7, .my2_pb_column_8
+  {
+    padding:2%;
+  } 
+  .button_div {
+    height: 54px;
+    display: inline-block;
+    padding-left: 7%;
+}
+  .my2_pb_text_inner p {
+    font-size: 50px!important;
+    text-align: center!important;
      
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
+}
+  .abus_content {
+          
+    font-size: 60px!important;
+    padding: 2% 0% 0% 4%!important;;
+           }
+    .abus_content h2 {
+      font-size:35px!important;
+      margin-left:0%!important;
+    }
+}
+@media (min-width: 411px) and (max-width: 823px) 
+{
+  .about_us_main_row {
+    margin-left: 0%!important; 
+     margin-right: 0%!important; 
+    padding-left: 4%!important;
+    padding-right: 2%;
+}
+}
+  .abus-col2-con-p p{
+    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 17px!important;
+    line-height: 1.8em;
+    word-wrap: break-word;
+    padding: 4%; 
+    
   }
+  
+  .my2_pb_column_3, .my2_pb_column_4, .my2_pb_column_5, .my2_pb_column_6, .my2_pb_column_7, .my2_pb_column_8
+  {
+    padding:2%;
+  } 
+  .button_div {
+    height: 54px;
+    display: inline-block;
+    padding-left: 7%;
+}
+  .my2_pb_text_inner p {
+    font-size: 55px!important;
+    text-align: center!important;
+     
+}
+  .abus_content {
+          
+    font-size: 60px!important;
+    padding: 2% 0% 0% 4%!important;;
+           }
+    .abus_content h2 {
+      font-size:37px!important;
+      margin-left:0%!important;
+    }
+}
+@media (min-width: 411px) and (max-width: 823px) and (orientation:landscape)
+{
+  .about_us_main_row {
+    margin-left: 0%!important; 
+     margin-right: 0%!important; 
+    padding-left: 4%!important;
+    padding-right: 2%;
+}
+.abus-col2-con-p {
+    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 13px;
+    line-height: 1.8em;
+    word-wrap: break-word;    
+  }
+  .abus-col2-con-p p{
+    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 17px!important;
+    line-height: 1.8em;
+    word-wrap: break-word;
+    padding: 4%; 
+    
+  }
+  
+  .my2_pb_column_3, .my2_pb_column_4, .my2_pb_column_5, .my2_pb_column_6, .my2_pb_column_7, .my2_pb_column_8
+  {
+    padding:2%;
+  } 
+  .button_div {
+    height: 54px;
+    display: inline-block;
+    padding-left: 7%;
+}
+  .my2_pb_text_inner p {
+    font-size: 50px!important;
+    text-align: center!important;
+     
+}
+  .abus_content {
+          
+    font-size: 60px!important;
+    padding: 2% 0% 0% 4%!important;;
+           }
+    .abus_content h2 {
+      font-size:35px!important;
+      margin-left:0%!important;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about_us_main_row
+{
+    margin-left: 5%;
+    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 2%;
+}
+.abus-col2-con-p {
+    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+    background-color: #fff;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 13px;
+    line-height: 1.8em;
+    word-wrap: break-word;
+    
+  }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+  
+}
+  
   .body {
     background-color: #fff;
     line-height: 1.7em;
@@ -377,7 +654,11 @@
     -webkit-font-smoothing: antialiased;
     
   }
-
+  .my2_pb_text_inner p {
+    font-size: 100px;
+    text-align: center!important;
+     
+}
    
 
   .about_us_col1_first {   
@@ -439,22 +720,9 @@
     margin-top: 0px;
   }
 
-  .abus-col2-con-p {
-    font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
-    background-color: #fff;
-    margin-top: 0px;
-    padding-top: 0px;
-    font-size: 16px;
-    line-height: 1.8em;
-    word-wrap: break-word;
-    
-  }
+  
 
-  .abus-col2-con-p p {
-    margin-top: 0px;
-    padding-top: 0px;
-  }
-
+  
   .about_us_col2 {
     
     background-color: #fff;
@@ -682,18 +950,14 @@
           padding-top: 0px;
           font-size: 16px;
           font-weight: 400;
-          
+          padding: 2%; 
       }
-      .my2_pb_text_inner
-      {
-        float:left;
+     
+      .my2_pb_text_inner p {
+          font-size: 100%;
+          text-align: center!important;          
       }
-    .my2_pb_text_inner p
-    {
-      font-size: 14px;
-      text-align: left!important;
-      color: rgba(0,0,0,0.02)!important;
-    }
+}
     .my2_pb_text_2 h2 {
     font-family: 'Share Tech',Helvetica,Arial,Lucida,sans-serif;
     font-size: 30px;
@@ -713,10 +977,15 @@
     font-weight: 500;
       }
 }
-@media (min-width: 360px) and (max-width: 640px) {
+@media (min-width: 481px) and (max-width: 640px) {
 
   .section1_abus_col {
     padding: 1% 0% 1% 0%;
+}
+.contact_us_column
+{
+  padding-top:1%;
+padding-bottom:1%;
 }
 .section1_abus
 {
@@ -745,16 +1014,14 @@
         margin-top: 0px;
         padding-top: 0px;
         font-size: 16px;
-        font-weight: 400;          
+        font-weight: 400;
+        padding: 2%;          
     }
-    .my2_pb_text_inner
-    {
-      float:left;
-    }
+  
   .my2_pb_text_inner p
   {
     font-size: 14px;
-    text-align: left!important;
+   
     color: rgba(0,0,0,0.02)!important;
   }
   .my2_pb_text_2 h2 {
@@ -815,7 +1082,7 @@ body{font-size:18px;}
     {
       font-size: 14px;
       text-align: left!important;
-      color: rgba(0,0,0,0.02)!important;
+      
     }
     .my2_pb_text_2 h2 {
     font-family: 'Share Tech',Helvetica,Arial,Lucida,sans-serif;
@@ -844,21 +1111,54 @@ body{font-size:23px;}
     .about_us_main_row {
     margin-left: 46px;
 }
+.contact_us_column
+    {
+      padding-top:2%;
+    padding-bottom:5%;
+    }
 }
  
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-body{font-size:20px;}
-p{
-        font-size:20px;
-    }
+  .about_us_main_row
+{
+    margin-left: 5%;
+    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 2%;
+}
+.contact_us_column
+{
+  padding-top:2%;
+padding-bottom:5%;
+}
 
 }
  
 
-@media (min-width: 1025px) and (max-width: 1280px) {
-
+@media (min-width: 1024px) and (max-width: 1366px) {
+      .contact_us_column
+    {
+      padding-top:5%;
+    padding-bottom:5%;
+    }
+  .abus_content h2 {
+    font-weight: 500;
+    color: #333;
+    font-family: 'Share Tech', Helvetica, Arial, Lucida, sans-serif;
+    font-size: 48px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin-top: -31px;
+    margin-block-start: 0px;
+    vertical-align: baseline;
+    margin-left: 27px;
+}
+.abus_content
+{
+  padding-left:2%;
+}
 body{font-size:23px;}
 .about_us_col1_first
   {
@@ -879,15 +1179,25 @@ body{font-size:23px;}
 }
  
 
-@media (min-width: 1281px) {
-
-body{
-  font-size: 20px;
-  }
-  .about_us_col1_first
-  {
-    margin:30px;
-  }
+@media (min-width: 900px) and (max-width: 1440px) {
+        .abus_content
+        {
+          padding-left:2%;
+        }
+      .my2_pb_text_inner p {
+            font-size: 80%!important;
+            text-align: center!important;
+            color: rgba(0,0,0,0.02)!important;
+        }
+        .contact_us_column
+        {
+          padding-top:5%;
+        padding-bottom:5%;
+        }
+}
+.my2_pb_section_2 
+{
+    padding-bottom: 3%;
 }
 
 form {
@@ -1034,7 +1344,51 @@ img {
     max-width: 550px;
     margin: 0 auto;
     position: relative;
-    text-align:left;
+    text-align:center;
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.et_pb_blurb_0.et_pb_blurb .et_pb_module_header, .et_pb_blurb_0.et_pb_blurb .et_pb_module_header a {
+    font-family: 'Share Tech',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 24px;
+    line-height: 1.2em;
+}
+.et_pb_bg_layout_dark, .et_pb_bg_layout_dark h1, .et_pb_bg_layout_dark h2, .et_pb_bg_layout_dark h3, .et_pb_bg_layout_dark h4, .et_pb_bg_layout_dark h5, .et_pb_bg_layout_dark h6 {
+    color: #FFF !important;
+}
+.et_pb_column_1_3 h4, .et_pb_column_2_5 h4, .et_pb_column_1_4 h4, .et_pb_column_1_5 h4, .et_pb_column_1_6 h4 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 18px;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    padding-bottom: 10px;
+    line-height: 1em;
+    font-weight: 500;
+}
+user agent stylesheet
+h4 {
+    font-weight: bold;
+}
+.my2_pb_blurb.my2_pb_text_align_left .my2_pb_blurb_content .my2_pb_blurb_container {
+    text-align: left;
 }
 .my2_pb_gallery_item, .my2_pb_portfolio_item, .my2_pb_blurb_content, .my2_pb_tabs_controls, .my2_pb_tab, .my2_pb_slide_description, .my2_pb_pricing_heading, .my2_pb_pricing_content, .my2_pb_promo_description, .my2_pb_newsletter_description, .my2_pb_counter_title, .my2_pb_circle_counter, .my2_pb_number_counter, .my2_pb_toggle_title, .my2_pb_toggle_content, .my2_pb_contact_main_title, .my2_pb_testimonial_description_inner, .my2_pb_team_member, .my2_pb_countdown_timer_container, .my2_pb_post, .my2_pb_text, .product, .my2_pb_widget, .my2_pb_wc_additional_info, .my2_pb_wc_breadcrumb, .my2_pb_wc_title, .my2_pb_wc_stock, .my2_pb_wc_rating, .my2_pb_wc_price, .my2_pb_wc_meta, .my2_pb_wc_description, .my2_pb_wc_add_to_cart {
     word-wrap: break-word;
@@ -1046,7 +1400,7 @@ img {
     background-color: #ff8a3d;
     padding-top: 40px!important;
     padding-right: 30px!important;
-    padding-bottom: 40px!important;
+    padding-bottom: 23px!important;
     padding-left: 30px!important;
 }
 .my2_pb_blurb_1.my2_pb_blurb {
@@ -1157,9 +1511,6 @@ h1, h2, h3, h4, h5, h6 {
 .my2_pb_column_1_3 h4, .my2_pb_column_2_5 h4, .my2_pb_column_1_4 h4, .my2_pb_column_1_5 h4, .my2_pb_column_1_6 h4 {
      font-size: 18px; 
 }
-.my2_pb_text_2.my2_pb_text {
-    color: rgba(0,0,0,0.02)!important;
-}
 .my2_pb_text_2 {
     font-family: 'Share Tech',Helvetica,Arial,Lucida,sans-serif;
     font-size: 100px;
@@ -1220,7 +1571,7 @@ h1, h2, h3, h4, h5, h6 {
 {
 padding: 1% 7% 1% 2%;
 }
-,contact_main_title
+.contact_main_title
 {
     font-weight: 500;
     padding-bottom: 16px;
@@ -1230,11 +1581,7 @@ padding: 1% 7% 1% 2%;
     color: #000000!important;
     line-height: 1.2em
 }
-.contact_us_column
-{
-  padding-top:5%;
-padding-bottom:5%;
-}
+
 .table td, .table th
 {
   text-align:left;
@@ -1279,10 +1626,8 @@ padding-bottom:5%;
 <body>
 <div class="container-fluid  section1_abus">
   <div class="row about_us_main_row .my_b_row">
-  <div class="row  abus_content .my_b_row ">   
-    
-        5s3s
-        <p></p>
+  <div class="row  abus_content my_b_row ">        
+        <p>5s3s</p>
         <h2>About us</h2>        
   </div>
   <div class="row about_us_div_row my_b_row">
@@ -1311,19 +1656,19 @@ padding-bottom:5%;
 
 <div id="services-01" class="containner-fluid my2_pb_section my2_pb_section_2 my2_section_regular" >
 				
-  <div class="row my2_pb_row my2_pb_row_1">
+  <div class="row my_b_row my2_pb_row_1">
   <div class="col-lg-12 my2_pb_column my2_pb_column_4_4 my2_pb_column_2  my2_pb_css_mix_blend_mode_passthrough et-last-child">
   
   
   <div class="row my2_pb_module my2_pb_text my2_pb_text_2  my2_pb_text_align_center my2_pb_bg_layout_light">
   
   
-  <div class="row my2_pb_text_inner"><p>SERVICES</p></div>
+  <div class="row my_b_row  my2_pb_text_inner"><p>SERVICES</p></div>
 <h2>What We Do</h2></div>
 </div> 
 </div>  
 
-<div class="row my2_pb_row my2_pb_row_2" style="margin-bottom: 4%;">
+<div class="row my_b_row my2_pb_row my2_pb_row_2" style="margin-bottom: 4%;">
   <div class="col-lg-4 my2_pb_column my2_pb_column_1_3 my2_pb_column_3  my2_pb_css_mix_blend_mode_passthrough">  
   
   <div class="my2_pb_module my2_pb_blurb my2_pb_blurb_0  my2_pb_text_align_left  my2_pb_blurb_position_top my2_pb_bg_layout_dark my2_had_animation" >
@@ -1332,8 +1677,8 @@ padding-bottom:5%;
   <div class="my2_pb_blurb_content">
       <div class="my2_pb_main_blurb_image"><span class="my2_pb_image_wrap"><img src="https://secureservercdn.net/198.71.233.64/01f.9a2.myftpupload.com/wp-content/uploads/2020/03/design-230x230-1.png" alt="" srcset="https://secureservercdn.net/198.71.233.64/01f.9a2.myftpupload.com/wp-content/uploads/2020/03/design-230x230-1.png 230w, https://secureservercdn.net/198.71.233.64/01f.9a2.myftpupload.com/wp-content/uploads/2020/03/design-230x230-1-150x150.png 150w" sizes="(max-width: 230px) 100vw, 230px" class="et-waypoint my2_pb_animation_off et-animated"></span></div>
       <div class="my2_pb_blurb_container">
-          <h4 class="my2_pb_module_header"><span>Web Design</span></h4>
-          <div class="my2_pb_blurb_description"><p>Custom design services are something we do together. Let’s create a digital footprint for your company.</p></div>
+          <h4 class="my2_pb_module_header" style="color:#fff"><span>Web Design</span></h4>
+          <div class="my2_pb_blurb_description" style="color:#fff"><p>Custom design services are something we do together. Let’s create a digital footprint for your company.</p></div>
       </div>
   </div> 
 </div> 
@@ -1404,8 +1749,8 @@ padding-bottom:5%;
           <img src="https://secureservercdn.net/198.71.233.64/01f.9a2.myftpupload.com/wp-content/uploads/2020/03/digital-icon-230px.png" 
           alt="" srcset="https://secureservercdn.net/198.71.233.64/01f.9a2.myftpupload.com/wp-content/uploads/2020/03/digital-icon-230px.png 230w, https://secureservercdn.net/198.71.233.64/01f.9a2.myftpupload.com/wp-content/uploads/2020/03/digital-icon-230px-150x150.png 150w" sizes="(max-width: 230px) 100vw, 230px" class="et-waypoint my2_pb_animation_off et-animated"></span></div>
       <div class="my2_pb_blurb_container">
-          <h4 class="my2_pb_module_header"><span>Digital Marketing</span></h4>
-          <div class="my2_pb_blurb_description">From market research and analytics, we provide a full range of digital strategy services to take your online marketing to success.</div>
+          <h4 class="my2_pb_module_header" style="color:#fff"><span>Digital Marketing</span></h4>
+          <div class="my2_pb_blurb_description" style="color:#fff">From market research and analytics, we provide a full range of digital strategy services to take your online marketing to success.</div>
       </div>
   </div> 
 </div> 
@@ -1469,18 +1814,18 @@ padding-bottom:5%;
       <div class="row  align-items-center justify-content-center page-header" style="margin-left: 20px;"><h2 class="contact_main_title" >We're Here To Help!</h2></div>
       <div class="row align-items-center justify-content-center contact_form">
         
-        <form method="post" action="http://localhost:1313/">
+        <form method="post" netlify-honeypot="hpfield" netlify name="sentMessage" id="contactForm">
           <div class="col-"> <label for="fname" class="form_label">Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your Name">
+                <input type="text" id="name" name="name" placeholder="Your Name" class="form-group" />
               </div>
             <div class="col-">
-              <label for="email" class="form_label">Email Address</label>
-              <input type="text" id="lname" name="email" placeholder="Email Address">
+              <label for="email"  class="form_label">Email Address</label>
+              <input type="text" id="email" name="email" placeholder="Email Address" class="form-group">
             </div>
               <label for="Meassage" class="form_label">Message</label>
-              <input type="textarea" id="Meassage" name="Meassage" placeholder="Meassage">
+              <input type="textarea" id="message" name="message" placeholder="Meassage" class="form-group">
   
-    <button type="submit" name="submit_button" class="button contact_submit_button" role="button">send messages</button>
+    <button type="submit" name="submit_button" class="button contact_submit_button" role="button" onclick="myFunction()">send messages</button>
   </form>
 </div> 
 

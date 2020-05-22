@@ -914,8 +914,8 @@ body{font-size:23px;}
         }
         .contact_us_column
         {
-          padding-top:5%;
-        padding-bottom:5%;
+          padding-top:10%!important;
+        padding-bottom:10%!important;
         }
 }
 .my2_pb_section_2 
@@ -1546,7 +1546,7 @@ padding: 1% 7% 1% 2%;
       <div class="row  align-items-center justify-content-center page-header" style="margin-left: 20px;"><h2 class="contact_main_title" >We're Here To Help!</h2></div>
       <div class="row align-items-center justify-content-center contact_form">
         <!--action="https://hooks.zapier.com/hooks/catch/7612139/oikug8p/"-->
-        <form method="post"  netlify-honeypot="hpfield" netlify name="sentMessage" id="contactForm">
+        <form action="POST" data-netlify="true" name="sentMessage" id="contactForm">
           <div class="col-"> <label for="fname" class="form_label">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your Name" class="form-group" />
               </div>
@@ -1556,7 +1556,9 @@ padding: 1% 7% 1% 2%;
             </div>
               <label for="Meassage" class="form_label">Message</label>
               <input type="textarea" id="message" name="message" placeholder="Meassage" class="form-group">
-  
+            <div class="field">
+              <div data-netlify-recaptcha="true"></div>
+            </div>
     <button type="submit" name="submit_button" class="button contact_submit_button" role="button" onclick="myFunction()">send messages</button>
   </form>
 </div> 

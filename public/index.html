@@ -326,60 +326,13 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-$(function() {
-
-    $("input,textarea").not("[type=search]").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function($form, event, errors) {
-            
-        },
-        submitSuccess: function($form, e) {
-    	    e.preventDefault();
-    	
-    	    var submitButton = $('input[type=submit]', $form);
-    	    $.ajax({
-    	      type: 'POST',
-    	      url: $form.prop('action'),
-    	      accept: {
-    	        javascript: 'application/javascript'
-    	      },
-    	      data: $form.serialize(),
-    	      beforeSend: function() {
-				submitButton.prop('value', 'Please Wait...');
-				submitButton.prop('disabled', 'disabled');
-    	      }
-    	    }).done(function(data) {
-				submitButton.prop('value', 'Thank you, we\x27ll get back to you shortly.');
-    			submitButton.prop('disabled', false);
-    			hj('formSubmitSuccessful');
-    	    });
-        },
-
-        filter: function() {
-            return $(this).is(":visible");
-        },
-    });
-
-});
-
- 
-$('#name').focus(function() {
-    $('#success').html('');
-});
-
-</script> 
-<script>function myFunction() {
-  document.getElementById("contactForm").reset();
-}</script>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-
 <style>
+
   body {
       font-family: "Prime regular",Arial,sans-serif!important;
       font-size:20px;
@@ -1819,18 +1772,18 @@ padding: 1% 7% 1% 2%;
       <div class="row  align-items-center justify-content-center page-header" style="margin-left: 20px;"><h2 class="contact_main_title" >We're Here To Help!</h2></div>
       <div class="row align-items-center justify-content-center contact_form">
         
-        <form action="POST" data-netlify="true" netlify-honeypot="hpfield" name="sentMessage" id="contactForm">
+        <form action="POST" data-netlify=true name="sentMessage" id="contactForm">
           <div class="form-group">
-             <label for="fname" class="form_label">Name</label>
+             <label for="fname" class="form_label" name="namelbl">Name</label>
                 <input type="text" id="name" name="name" placeholder="Your Name" class="form-group" />
               </div>
             <div class="form-group">
-              <label for="email"  class="form_label">Email Address</label>
+              <label for="email"  class="form_label" name="emaillbl">Email Address</label>
               <input type="text" id="email" name="email" placeholder="Email Address" class="form-group">
             </div>
             <div class="form-group">
-              <label for="Meassage" class="form_label">Message</label>
-              <input type="textarea" id="message" name="message" placeholder="Meassage" class="form-group" rows="4"/>
+              <label for="Message" class="form_label" name="messagelbl">Message</label>
+              <input type="textarea" id="message" name="message" placeholder="Message" class="form-group" rows="4"/>
             </div>
             <div class="field">
               <div data-netlify-recaptcha="true"></div>
@@ -1866,9 +1819,7 @@ padding: 1% 7% 1% 2%;
   </div>
    
 </div>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 
     </main>

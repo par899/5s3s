@@ -1,5 +1,5 @@
 ---
-title: "Contact"
+title: "Contact Us"
 date: 2020-04-24T13:58:40-04:00
 draft: false
 heading: "Get in touch"

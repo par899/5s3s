@@ -810,7 +810,9 @@ padding-bottom:5%;
   ##Screen = B/w 1025px to 1280px
 */
 
-@media (min-width: 1024px) and (max-width: 1366px) {
+@media only screen   
+and (min-width: 900px)   
+and (max-width: 1440px) {
       .contact_us_column
     {
       padding-top:5%;
@@ -849,13 +851,17 @@ body{font-size:23px;}
     font-family: 'Share Tech',Helvetica,Arial,Lucida,sans-serif;
     font-size: 48px;
     } 
+    .contactus_row {
+    padding-top: 10%!important;
+    padding-bottom: 10%!important;
+}
 }
 /*
   ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
+  ##Screen = 1281px to higher resolution desktops*/
 
-@media (min-width: 900px) and (max-width: 1440px) {
+
+@media (min-width: 1367px) and (max-width: 1440px) {
         .abus_content
         {
           padding-left:2%;
@@ -865,12 +871,16 @@ body{font-size:23px;}
             text-align: center!important;
             color: rgba(0,0,0,0.02)!important;
         }
-        .contact_us_column
+        .contactus_row
         {
           padding-top:10%!important;
         padding-bottom:10%!important;
         }
        
+}
+.contactus_row {
+    padding-top: 10%!important;
+    padding-bottom: 10%!important;
 }
 .my2_pb_section_2 
 {
@@ -1077,7 +1087,7 @@ h4 {
     background-color: #ff8a3d;
     padding-top: 40px!important;
     padding-right: 30px!important;
-    padding-bottom: 23px!important;
+    padding-bottom: 37px!important;
     padding-left: 30px!important;
 }
 .my2_pb_blurb_1.my2_pb_blurb {
@@ -1124,7 +1134,7 @@ h4 {
     background-color: rgba(21,49,78,0.61);
     padding-top: 40px!important;
     padding-right: 30px!important;
-    padding-bottom: 40px!important;
+    padding-bottom: 13px!important;
     padding-left: 30px!important;
 }
 .my2_pb_blurb_5.my2_pb_blurb {
@@ -1321,7 +1331,7 @@ padding: 1% 7% 1% 2%;
         integrate marketing and branding.
       </p> 
       <div class="row  button_div" >
-        <a class="et_pb_button_0 " href="http://www.5s3s.ca/about-us/" target="_blank">learn more</a>
+        <a class="et_pb_button_0 btn " href="http://www.5s3s.ca/about-us/" target="_blank">learn more</a>
       </div>       
   </div>    
     <div class="col-lg-6 about_us_col2 section1_abus_col2">
@@ -1494,7 +1504,7 @@ padding: 1% 7% 1% 2%;
 </div>
 <!--Section3 end-->
 <div class="container-fluid  contactus_section4">
-<div class="row " style="background-color:#fff;">
+<div class="row contactus_row" style="background-color:#fff;">
 <div class="col-lg-7  contact_us_column">
     <div class="container">
       <div class="row  align-items-center justify-content-center page-header" style="margin-left: 20px;"><h2 class="contact_main_title" >We're Here To Help!</h2></div>
@@ -1516,7 +1526,9 @@ padding: 1% 7% 1% 2%;
             <div class="field">
               <div data-netlify-recaptcha="true"></div>
             </div>
+            <div class="form-group">
     <button type="submit" name="submit_button" class="button contact_submit_button" role="button" onclick="myFunction()">send messages</button>
+  </div>
   </form>
 </div> 
 
